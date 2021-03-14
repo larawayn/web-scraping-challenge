@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style='background-color: rgb(177, 115, 0) ;'>
+  <div class="container-fluid">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Mars Data</a></p>
+    </div>
+  </div>  
+  <div class="container-fluid">
+    <section style="background-color: white;">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 >Latest Mars News:</h1>
+        <h3 class="display-1;" >{{marsinfo.news_title}}</h3>
+        <h5>{{marsinfo.news_p}}</h5>
+      </div>
+    </div>
+    <div class="row" style='margin-top: 20px;'>
+      <div class="col-md-8">
+        <h1 >Latest Mars Image</h1>
+        <img width="90%" height="auto" style="padding: 10px;" class="img-fluid" src={{marsinfo.featured_image_url}}>
+      </div>
+      <div class="col-md-4">
+        <h1 >Mars Facts</h1>
+        <div class="table table-striped" >
+          <div class="table-responsive"style="padding: 10px;" >
+            <table border="1" class="dataframe" >
+            {{marsinfo.mars_facts_html|safe}}
+          </table>
+          </div> 
+        </div> 
+      </div> 
+    </div>
+    <div class="row"> 
+      <div class="col-md-12">
+        <div class='jumbotron'>
+          <h1 class="text-center">Mars Hemispheres</h1></div>
+          {% for dict in marsinfo.hemisphere_image_urls|batch(2) %}
+          <div class='row'>
+              {% for key in dict %}
+              <div class="col-md-6">
+                <img width="100%" height="auto" style='margin-top: 10px;' class="img-fluid" src={{key.img_url}}>
+                <hr class='my-4'>
+                <h2>{{key.title}}</h2>
+              </div>
+              {% endfor %}
+          </div>
+          {% endfor %}
+        </div> 
+      </div>
+    </div>
+  </section>
+
+  </div>
+</body>
+
+</html>
+
