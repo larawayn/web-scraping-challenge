@@ -1,9 +1,9 @@
 # University of Denver Data Analytics Boot Camp: Web Scraping Homework - Mission to Mars
 <p align="center">
-<img width="800" height="300" src="Images/scrape.png">
+<img width="900" height="400" src="Images/scrape.png">
 </p>
 
-## Overview: This project consists of scraping four different websites for information regarding Mars and space exploration. Python is used to create the code and Flask used to scrape and store the data into MongoDB. HTML is used for visualization and setup with a "Scrape" button to pull in new data as the websites are updated. 
+## Overview: This project consists of scraping four different websites for information regarding Mars and space exploration. Python is used to create the code and Flask used to scrape and store/retrieve the data from MongoDB. HTML is used for visualization and setup with a "Scrape" button to pull in new data as the websites are updated. 
 
 ## Step 1 - Scraping
 
@@ -57,18 +57,24 @@ Complete your initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, an
 Use MongoDB with Flask templating to create a new HTML page that displays all of the information that was scraped from the URLs above.
 
 * Start by converting your Jupyter notebook into a Python script called `scrape_mars.py` with a function called `scrape` that will execute all of your scraping code from above and return one Python dictionary containing all of the scraped data.
+#### <a></a>Python Scrape Function
+![image](Images/scrapemars.png)
 
 * Next, create a route called `/scrape` that will import your `scrape_mars.py` script and call your `scrape` function.
 
+
 * Create a root route `/` that will query your Mongo database and pass the mars data into an HTML template to display the data.
-
+#### <a></a>Python Routes
+![image](Images/appscrape.png)
 * Create a template HTML file called `index.html` that will take the mars data dictionary and display all of the data in the appropriate HTML elements. Use the following as a guide for what the final product should look like, but feel free to create your own design.
-
+#### <a></a>HTML Input
+![image](Images/HTML.png)
 * Use Splinter to navigate the sites when needed and BeautifulSoup to help find and parse out the necessary data.
 
 * Use Pymongo for CRUD applications for your database. For this homework, you can simply overwrite the existing document each time the `/scrape` url is visited and new data is obtained.
+#### <a></a>Pymongo DB
+![image](Images/pymongo.png)
 
-* Use Bootstrap to structure your HTML template.
 #### <a></a>Final HTML
 ![HTML](Images/html_page1.png)
 ![HTML](Images/html_page2.png)
