@@ -57,6 +57,7 @@ Complete your initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, an
 Use MongoDB with Flask templating to create a new HTML page that displays all of the information that was scraped from the URLs above.
 
 * Start by converting your Jupyter notebook into a Python script called `scrape_mars.py` with a function called `scrape` that will execute all of your scraping code from above and return one Python dictionary containing all of the scraped data.
+
 #### <a></a>Python Scrape Function
 ![image](Images/scrapemars.png)
 
@@ -64,14 +65,19 @@ Use MongoDB with Flask templating to create a new HTML page that displays all of
 
 
 * Create a root route `/` that will query your Mongo database and pass the mars data into an HTML template to display the data.
+
 #### <a></a>Python Routes
 ![image](Images/appscrape.png)
+
 * Create a template HTML file called `index.html` that will take the mars data dictionary and display all of the data in the appropriate HTML elements. Use the following as a guide for what the final product should look like, but feel free to create your own design.
+
 #### <a></a>HTML Input
 ![image](Images/HTML.png)
+
 * Use Splinter to navigate the sites when needed and BeautifulSoup to help find and parse out the necessary data.
 
 * Use Pymongo for CRUD applications for your database. For this homework, you can simply overwrite the existing document each time the `/scrape` url is visited and new data is obtained.
+
 #### <a></a>Pymongo DB
 ![image](Images/pymongo.png)
 
